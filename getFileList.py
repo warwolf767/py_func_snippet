@@ -1,7 +1,7 @@
 
 #-*-coding:utf-8-*-
 
-__anthor__ = 'ice wolf'
+__author__ = 'ice wolf'
 
 import os
 import re
