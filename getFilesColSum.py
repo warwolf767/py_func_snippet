@@ -1,7 +1,7 @@
 
 #-*-coding:utf-8-*-
 
-__anthor__ = 'ice wolf'
+__author__ = 'ice wolf'
 
 def getFilesColSum(filesList):
 	"""
@@ -12,7 +12,9 @@ def getFilesColSum(filesList):
 	for filename in filesList:
 		print filename
 		target = open(filename,'r+') 
-		lines = len(target.readlines()) 
+		content = target.readlines()
+        L = content[0].find('\r') == -1 and content or content[0].split('\r')
+        lines = len(L)  
 		target.close()
 		colSum += lines
 		print "There are %d lines in %s" % (lines, filename)
