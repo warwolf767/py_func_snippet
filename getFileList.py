@@ -18,8 +18,9 @@ def getFileList(dir, fileList, patternStr='^$'):
         fileList.append(dir.decode('gbk'))
     elif os.path.isdir(dir):  
         for name in os.listdir(dir):
-            if (re.findall(patternStr, name)) == []:
+            #Ignore files with '.jpg'
+            if not (re.findall(patternStr, name)) == []:
                 continue
             newDir=os.path.join(dir,name)
-            GetFileList(newDir, fileList)  
+            getFileList(newDir, fileList)  
     return fileList
