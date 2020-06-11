@@ -13,9 +13,10 @@ def getFilesColSum(filesList):
 		print filename
 		target = open(filename,'r+') 
 		content = target.readlines()
-        L = content[0].find('\r') == -1 and content or content[0].split('\r')
-        lines = len(L)  
+		L = content[0].find('\r') == -1 and content or content[0].split('\r')
+		lines = len(L)  
 		target.close()
 		colSum += lines
 		print "There are %d lines in %s" % (lines, filename)
+	
 	return colSum
